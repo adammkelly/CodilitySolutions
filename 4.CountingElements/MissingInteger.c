@@ -10,10 +10,8 @@ int solution(int A[], int N) {
   int *B;
   B = (int *)calloc(N, sizeof(int));
   for (int i = 0; i < N; i++) {
-    if (A[i] > 0) {
-      if (B[A[i] - 1] == 0) {
+    if (A[i] > 0 && A[i] <= N) {
         B[A[i] - 1] = 1;
-      }
     }
   }
 
@@ -24,7 +22,7 @@ int solution(int A[], int N) {
     }
   }
 
-  return -1;
+  return N + 1;
 }
 
 int main(int argc, char const *argv[]) {
